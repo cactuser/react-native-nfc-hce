@@ -1,0 +1,5 @@
+rootProject.name = 'hce_example'
+include ':react-native-nfc-hce'
+project(':react-native-nfc-hce').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-nfc-hce/android')
+
+include ':app'

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">hce_example</string>
+    <string name="service_name">service_name</string>
+    <string name="card_title">card_title</string>
+</resources>

@@ -1,6 +1,16 @@
-
-import { NativeModules } from 'react-native';
+import { NativeModules, DeviceEventEmitter } from "react-native";
 
 const { RNHce } = NativeModules;
 
-export default RNHce;
+export default {
+  supportNFC: function() {
+    return RNHce.supportNFC;
+  },
+  listenNFCStatus: function(callback) {
+    DeviceEventEmitter.addListener("listenNFCStatus", resp => {
+      if (resp.status) {
+        callback(resp.status);
+      }
+    });
+  }
+};

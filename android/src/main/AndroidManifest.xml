@@ -1,6 +1,8 @@
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="studio.bb.rnlib">
+    package="studio.bb.rnlib">
+
+    <uses-permission android:name="android.permission.NFC" />
+
 
 </manifest>
   
