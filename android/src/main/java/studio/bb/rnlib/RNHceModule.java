@@ -50,14 +50,16 @@ public class RNHceModule extends ReactContextBaseJavaModule implements Lifecycle
         WritableMap map = Arguments.createMap();
         if (adapter != null) {
             map.putBoolean("support", true);
+            if (adapter.isEnabled()) {
+                map.putBoolean("enabled", true);
+            } else {
+                map.putBoolean("enabled", false);
+            }
         } else {
             map.putBoolean("support", false);
-        }
-        if (adapter.isEnabled()) {
-            map.putBoolean("enabled", true);
-        } else {
             map.putBoolean("enabled", false);
         }
+
         return map;
     }
 
