@@ -15,7 +15,7 @@
     "CardEmulation"
   ],
   "author": "HJH",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/DoubeBlue/react-native-nfc-hce/issues"
   },
