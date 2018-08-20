@@ -50,13 +50,16 @@ export default class App extends Component {
     const { warnText } = this.state;
     return (
       <View style={styles.container}>
-        {warnText ? <Text style={styles.text}>{warnText}</Text> : null}
-        <TextInput
-          style={styles.input}
-          placeholder={"Enter Card Content"}
-          onChangeText={this._onChangeText}
-          returnKeyType={"done"}
-        />
+        {warnText ? (
+          <Text style={styles.text}>{warnText}</Text>
+        ) : (
+          <TextInput
+            style={styles.input}
+            placeholder={"Enter Card Content"}
+            onChangeText={this._onChangeText}
+            returnKeyType={"done"}
+          />
+        )}
       </View>
     );
   }
