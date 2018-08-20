@@ -1,8 +1,17 @@
 //@flow
 
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View, TextInput } from "react-native";
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Dimensions
+} from "react-native";
 import HCE from "react-native-nfc-hce";
+
+const window = Dimensions.get("window");
 
 export default class App extends Component {
   state = {
@@ -31,13 +40,37 @@ export default class App extends Component {
     });
   };
 
+  _onChangeText = text => {
+    if (text.length > 0) {
+      HCE.setCardContent(text);
+    }
+  };
+
   render() {
     const { warnText } = this.state;
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        {warnText ? <Text style={{ fontSize: 24 }}>{warnText}</Text> : null}
-        <TextInput />
+      <View style={styles.container}>
+        {warnText ? <Text style={styles.text}>{warnText}</Text> : null}
+        <TextInput
+          style={styles.input}
+          placeholder={"Enter Card Content"}
+          onChangeText={this._onChangeText}
+          returnKeyType={"done"}
+        />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  text: { fontSize: 24 },
+  container: { flex: 1, justifyContent: "center", alignItems: "center" },
+  input: {
+    width: window.width - 40,
+    fontSize: 24,
+    padding: 5,
+    backgroundColor: "white",
+    borderColor: "black",
+    borderWidth: 1
+  }
+});

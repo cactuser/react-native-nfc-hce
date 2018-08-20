@@ -69,6 +69,11 @@ public class RNHceModule extends ReactContextBaseJavaModule implements Lifecycle
                 .emit(eventName, payload);
     }
 
+    @ReactMethod
+    public void setCardContent(String content) {
+        IDWarehouse.SetID(this.reactContext, content);
+    }
+
     @Override
     public Map<String, Object> getConstants() {
         final Map<String, Object> constants = new HashMap<>();

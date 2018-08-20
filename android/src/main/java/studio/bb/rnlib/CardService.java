@@ -21,7 +21,7 @@ public class CardService extends HostApduService {
     public byte[] processCommandApdu(byte[] commandApdu, Bundle extras) {
         Log.i(TAG, "Received APDU: " + ByteArrayToHexString(commandApdu));
         if (Arrays.equals(SELECT_APDU, commandApdu)) {
-            String data = "00000000";
+            String data = IDWarehouse.GetID(this.getApplicationContext());
             byte[] accountBytes = data.getBytes();
             Log.i(TAG, "Sending account number: " + data);
             return ConcatArrays(accountBytes, SELECT_OK_SW);

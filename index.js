@@ -12,5 +12,8 @@ export default {
         callback(resp.status);
       }
     });
+  },
+  setCardContent: function(content) {
+    RNHce.setCardContent(content);
   }
 };
