@@ -75,6 +75,16 @@ Inspired by [android-CardEmulation](https://github.com/googlesamples/android-Car
 
 The aid need to customize
 
+- Edit AID in `react-native-nfc-hce/android/src/main/java/studio/bb/rnlib/CardService.java`
+
+```JAVA
+public class CardService extends HostApduService {
+
+private static final String TAG = "CardService";
+
+private static final String AID = "F201808175";
+```
+
 ## Usage
 
 ```javascript

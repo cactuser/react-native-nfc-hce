@@ -9,12 +9,13 @@ import java.util.Arrays;
 public class CardService extends HostApduService {
 
     private static final String TAG = "CardService";
-    private static final String SAMPLE_LOYALTY_CARD_AID = "F201808175";
+
+    private static final String AID = "F201808175";
 
     private static final String SELECT_APDU_HEADER = "00A40400";
     private static final byte[] SELECT_OK_SW = HexStringToByteArray("9000");
     private static final byte[] UNKNOWN_CMD_SW = HexStringToByteArray("0000");
-    private static final byte[] SELECT_APDU = BuildSelectApdu(SAMPLE_LOYALTY_CARD_AID);
+    private static final byte[] SELECT_APDU = BuildSelectApdu(AID);
 
 
     @Override
