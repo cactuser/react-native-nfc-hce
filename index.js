@@ -8,9 +8,7 @@ export default {
   },
   listenNFCStatus: function(callback) {
     DeviceEventEmitter.addListener("listenNFCStatus", resp => {
-      if (resp.status) {
-        callback(resp.status);
-      }
+      callback(resp.status);
     });
   },
   setCardContent: function(content) {
