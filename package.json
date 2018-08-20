@@ -1,6 +1,6 @@
 {
   "name": "react-native-nfc-hce",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "The nfc card-emulation on android",
   "main": "index.js",
   "scripts": {
