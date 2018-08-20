@@ -2,11 +2,13 @@
 
 Inspired by [android-CardEmulation](https://github.com/googlesamples/android-CardEmulation)
 
-only supported Android !
+🌟🔥Only supported Android !🔥🌟
 
-## Supported Platforms
+## Requisites
 
 - Android (API 19+)
+- Android SDK 27
+- Android Build Tools v27.0.2
 
 ## Getting started
 
@@ -70,6 +72,8 @@ only supported Android !
     </aid-group>
 </host-apdu-service>
 ```
+
+The aid need to customize
 
 ## Usage
 
