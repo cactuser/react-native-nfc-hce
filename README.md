@@ -1,4 +1,4 @@
-# react-native-hce
+# react-native-nfc-hce
 
 Inspired by [android-CardEmulation](https://github.com/googlesamples/android-CardEmulation)
 
