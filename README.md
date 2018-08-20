@@ -12,11 +12,11 @@ Inspired by [android-CardEmulation](https://github.com/googlesamples/android-Car
 
 ## Getting started
 
-`$ npm install react-native-hce --save`
+`$ npm install react-native-nfc-hce --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-hce`
+`$ react-native link react-native-nfc-hce`
 
 ### Manual installation
 
