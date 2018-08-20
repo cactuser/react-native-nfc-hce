@@ -19,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/DoubeBlue/react-native-nfc-hce/issues"
   },
-  "homepage": "https://github.com/DoubeBlue/react-native-nfc-hce#README.md",
-  "peerDependencies": {
-    "react-native": "^0.41.2"
-  }
+  "homepage": "https://github.com/DoubeBlue/react-native-nfc-hce#README.md"
 }
