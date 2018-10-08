@@ -6,10 +6,11 @@ export default {
   supportNFC: function() {
     return RNHce.supportNFC;
   },
-  listenNFCStatus: function(callback) {
-    DeviceEventEmitter.addListener("listenNFCStatus", resp => {
-      callback(resp.status);
-    });
+  startListenNFCStatus: function(callback) {
+    DeviceEventEmitter.addListener("listenNFCStatus", callback);
+  },
+  stopListenNFCStatus: function(callback) {
+    DeviceEventEmitter.removeListener("listenNFCStatus", callback);
   },
   setCardContent: function(content) {
     RNHce.setCardContent(content);

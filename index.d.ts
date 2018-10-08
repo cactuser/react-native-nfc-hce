@@ -1,5 +1,8 @@
 export function supportNFC(): { support: boolean; enabled: boolean };
-export function listenNFCStatus(): (
-  callback: (enabled: boolean) => void
+export function startListenNFCStatus(): (
+  callback: (status: object) => void
+) => void;
+export function stopListenNFCStatus(): (
+  callback: (status: object) => void
 ) => void;
 export function setCardContent(content: string): void;
