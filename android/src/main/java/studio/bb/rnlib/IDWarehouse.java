@@ -7,29 +7,61 @@ import android.util.Log;
 
 public class IDWarehouse {
 
-    private static final String PREF_ID = "ID";
-    private static final String DEFAULT_ID = "default";
+//    private static final String PREF_ID = "ID";
+    private static final String DEFAULT = "DEFAULT";
+    private static final String SPECIFIC = "SPECIFIC";
+    private static final String APPSTATE = "APPSTATE";
+    private static final String DEFAULT_CONTENT = "-1";
+
     private static final String TAG = "IDWarehouse";
-    private static String sID = null;
+//    private static String sID = null;
+
     private static final Object sIDLock = new Object();
 
-    public static void SetID(Context c, String s) {
+
+    public static void setDefaultContent(Context c, String s) {
         synchronized (sIDLock) {
-            Log.i(TAG, "Setting ID: " + s);
+            Log.i(TAG, "setDefaultContent: " + s);
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
-            prefs.edit().putString(PREF_ID, s).commit();
-            sID = s;
+            prefs.edit().putString(DEFAULT, s).commit();
         }
     }
 
-    public static String GetID(Context c) {
+    public static void setSpecificContent(Context c, String s) {
         synchronized (sIDLock) {
-            if (sID == null) {
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
-                String ID = prefs.getString(PREF_ID, DEFAULT_ID);
-                sID = ID;
-            }
-            return sID;
+            Log.i(TAG, "setSpecificContent: " + s);
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
+            prefs.edit().putString(SPECIFIC, s).commit();
         }
     }
+
+    public static void setAppState(Context c, String s) {
+        synchronized (sIDLock) {
+            Log.i(TAG, "setAppState: " + s);
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
+            prefs.edit().putString(APPSTATE, s).commit();
+        }
+    }
+
+
+
+    public static String getContent(Context c) {
+        synchronized (sIDLock) {
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(c);
+            String appState =  prefs.getString(APPSTATE, DEFAULT_CONTENT);
+            String content = "";
+            Log.i(TAG, "appState: " + appState);
+            if(appState.equals("active")){
+                content = prefs.getString(SPECIFIC, DEFAULT_CONTENT);
+            }else {
+                content = prefs.getString(DEFAULT, DEFAULT_CONTENT);
+            }
+            Log.i(TAG, "content: " + content);
+
+            return content;
+        }
+    }
+
+
+
 }

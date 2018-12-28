@@ -14,5 +14,11 @@ export default {
   },
   setCardContent: function(content) {
     RNHce.setCardContent(content);
+  },
+  setAppState: function(content) {
+    RNHce.setAppState(content);
+  },
+  setNfcDefaultTicket: function(content) {
+    RNHce.setNfcDefaultTicket(content);
   }
 };

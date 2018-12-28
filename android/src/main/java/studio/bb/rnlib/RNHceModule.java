@@ -71,7 +71,17 @@ public class RNHceModule extends ReactContextBaseJavaModule implements Lifecycle
 
     @ReactMethod
     public void setCardContent(String content) {
-        IDWarehouse.SetID(this.reactContext, content);
+        IDWarehouse.setSpecificContent(this.reactContext, content);
+    }
+
+    @ReactMethod
+    public void setNfcDefaultTicket(String content) {
+        IDWarehouse.setDefaultContent(this.reactContext, content);
+    }
+
+    @ReactMethod
+    public void setAppState(String content) {
+        IDWarehouse.setAppState(this.reactContext, content);
     }
 
     @Override
